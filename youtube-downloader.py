@@ -15,17 +15,20 @@ class bcolors:
 
 def Download():
 
-
+    #GET USER CHOICE
     form = input("SELECT A FORMAT :\n1. FOR VIDEO\n2. FOR ONLY AUDIO\n3. FOR PLAYLIST\n"
                  "YOUR CHOICE : ")
+    #GET USER VIDEO URL
     vid_url = input("URL => ")
+    #VALIDATE URL
     check_url  = validators.url(vid_url)
 
-    if check_url == True:
-        yt = YouTube(vid_url)
-        stream = yt.streams.first()
+    if form == "1":
+        #CHECK URL VALIDATION
+        if check_url == True:
+            yt = YouTube(vid_url)
+            stream = yt.streams.first()
 
-        if form == "1":
             try:
                 print(f"{bcolors.WARNING}================================================")
                 print(f"{bcolors.WARNING}=  Script Created By SELF LEARNING (XxavianxX) =")
@@ -37,7 +40,13 @@ def Download():
             except:
                 print(f"{bcolors.FAIL}[!] ERROR ! TRY AGAIN")
                 return
-        elif form == "2":
+        else:
+            print("INVALID URL !")
+            return form
+    elif form == "2":
+        if check_url == True:
+            yt = YouTube(vid_url)
+            stream = yt.streams.first()
             try :
                 print(f"{bcolors.WARNING}================================================")
                 print(f"{bcolors.WARNING}=  Script Created By SELF LEARNING (XxavianxX) =")
@@ -49,7 +58,13 @@ def Download():
             except:
                 print(f"{bcolors.FAIL}[!] ERROR ! TRY AGAIN")
                 return
-        elif form == "3":
+        else:
+            print("INVALID URL !")
+            return form
+    elif form == "3":
+        if check_url == True:
+            yt = YouTube(vid_url)
+            stream = yt.streams.first()
             try :
                 print(f"{bcolors.WARNING}================================================")
                 print(f"{bcolors.WARNING}=  Script Created By SELF LEARNING (XxavianxX) =")
@@ -61,8 +76,12 @@ def Download():
             except:
                 print(f"{bcolors.FAIL}[!] ERROR ! TRY AGAIN")
                 return
+        else:
+            print("INVALID URL !")
+            return form
+
     else:
-        print("INVALID URL !")
+        print("INVALID CHOICE  !")
         exit()
 Download()
 
