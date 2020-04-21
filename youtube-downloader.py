@@ -35,7 +35,7 @@ def Download():
                 print("================================================")
                 print(f"{bcolors.WARNING}\n[+] DOWNLOADING THE VIDEO PLEASE WAIT ...")
                 stream = yt.streams.first()
-                stream.download("/home/xxavianxx/Desktop/")
+                stream.download()
                 print(f"{bcolors.OKGREEN}[*] DOWNLOAD FINISHED !")
             except:
                 print(f"{bcolors.FAIL}[!] ERROR ! TRY AGAIN")
@@ -71,7 +71,7 @@ def Download():
                 print(f"{bcolors.WARNING}================================================")
                 print(f"{bcolors.WARNING}\n[+] DOWNLOADING THE PLAYLIST PLEASE WAIT ...")
                 pl = Playlist(vid_url)
-                pl.download_all("/home/xxavianxx/Desktop/")
+                pl.download_all()
                 print(f"{bcolors.OKGREEN}[*] DOWNLOAD FINISHED !")
             except:
                 print(f"{bcolors.FAIL}[!] ERROR ! TRY AGAIN")
